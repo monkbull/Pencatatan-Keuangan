@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pencatatan Keuangan Bulanan</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-wallet"></i> Pencatatan Keuangan Bulanan</h1>
+    </header>
+
+    <main>
+        <section id="input">
+            <h2><i class="fas fa-plus-circle"></i> Input Pemasukan dan Pengeluaran</h2>
+            <form id="finance-form">
+                <div class="form-group">
+                    <label for="date">Tanggal:</label>
+                    <input type="date" id="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="type">Tipe:</label>
+                    <select id="type" required>
+                        <option value="income">Pemasukan</option>
+                        <option value="expense">Pengeluaran</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="amount">Jumlah:</label>
+                    <input type="number" id="amount" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Deskripsi:</label>
+                    <input type="text" id="description" required>
+                </div>
+                <button type="submit"><i class="fas fa-paper-plane"></i> Tambah</button>
+            </form>
+        </section>
+
+        <section id="report">
+            <h2><i class="fas fa-chart-line"></i> Laporan Keuangan</h2>
+            <table id="finance-table">
+                <thead>
+                    <tr>
+                        <th>Tanggal</th>
+                        <th>Tipe</th>
+                        <th>Jumlah</th>
+                        <th>Deskripsi</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data akan ditambahkan di sini -->
+                </tbody>
+            </table>
+            <div class="totals">
+                <h3>Total Pemasukan: <span id="total-income">0</span></h3>
+                <h3>Total Pengeluaran: <span id="total-expense">0</span></h3>
+                <h3>Saldo: <span id="balance">0</span></h3>
+            </div>
+            <canvas id="financeChart" width="400" height="400"></canvas>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Pencatatan Keuangan Bulanan. Semua hak dilindungi.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
